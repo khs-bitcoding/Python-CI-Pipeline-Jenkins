@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'source venv/bin/activate && pytest --junitxml=report.xml'
+                sh 'source venv/bin/activate && pytest tests/--junitxml=report.xml'
             }
         }
     }
