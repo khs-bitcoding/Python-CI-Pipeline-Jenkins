@@ -1,12 +1,15 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'release', description: 'Branch to checkout and build')
+    }
     triggers {
         githubPush()
     }
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/khs-bitcoding/Python-CI-Pipeline-Jenkins.git'
+                git branch: "${params.BRANCH_NAME}", url: 'https://github.com/khs-bitcoding/Python-CI-Pipeline-Jenkins.git'
             }
         }
 
