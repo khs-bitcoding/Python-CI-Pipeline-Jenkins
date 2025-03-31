@@ -18,13 +18,13 @@ pipeline {
 
         stage('Run Script') {
             steps {
-                sh '. venv/bin/activate && python3 test.py'
+                sh 'source venv/bin/activate && python3 test.py'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '. venv/bin/activate && pytest tests/--junitxml=report.xml'
+                sh 'source venv/bin/activate && pytest test/ --junitxml=report.xml'
             }
         }
     }
