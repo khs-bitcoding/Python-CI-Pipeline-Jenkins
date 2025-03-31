@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/khs-bitcoding/Python-CI-Pipeline-Jenkins.git'
+                git branch: 'dev', url: 'https://github.com/khs-bitcoding/Python-CI-Pipeline-Jenkins.git'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
 
         stage('Run Script') {
             steps {
-                sh '. venv/bin/activate && python3 test.py && python3 main.py'
+                sh '. venv/bin/activate && python3 main.py'
             }
         }
 
