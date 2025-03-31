@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'BRANCH_NAME', defaultValue: 'dev', description: 'Branch to checkout and build')
+        string(name: 'BRANCH_NAME', defaultValue: 'release', description: 'Branch to checkout and build')
     }
     triggers {
         githubPush()
